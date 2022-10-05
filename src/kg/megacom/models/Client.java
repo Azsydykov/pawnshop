@@ -2,19 +2,28 @@ package kg.megacom.models;
 
 public class Client {
     private double id;
+    private String name;
     private String idCard;
     private boolean blocked;
-    private String name;
 
-    public Client(String idCard, String name) {
-        this.id = Math.random();
+
+    public Client(String name, String idCard) {
+        this.id = id;
+        this.name = name;
         this.idCard = idCard;
         this.blocked = blocked;
-        this.name = name;
     }
 
     public double getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getIdCard() {
@@ -31,21 +40,5 @@ public class Client {
 
     public void setBlocked(boolean blocked) {
         this.blocked = blocked;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "idCard='" + idCard + '\'' +
-                ", name='" + name + '\'' +
-                '}';
     }
 }

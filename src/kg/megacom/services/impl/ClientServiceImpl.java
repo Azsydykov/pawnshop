@@ -22,7 +22,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client createClient(String name, String idCard) {
-        Client client = new Client(idCard, name);
+        Client client = new Client(name, idCard);
         clientList.add(client);
         return client;
     }
@@ -38,7 +38,7 @@ public class ClientServiceImpl implements ClientService {
     public void getAllClients() {
         for (Client client : clientList) {
             System.out.println("Clients: " + "Name = " + client.getName() + ", ID = " + client.getId() + ", IDCARD = " +
-                    client.getIdCard() + " BLOCKED = " + client.isBlocked() + ".");
+                    client.getIdCard() + ", BLOCKED = " + client.isBlocked() + ".");
 
         }
     }

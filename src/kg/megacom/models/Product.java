@@ -4,11 +4,14 @@ public class Product {
     private double id;
     private String name;
     private double price;
+    private Client client;
 
-    public Product(String name, double price) {
-        this.id = Math.random();
+
+    public Product(String name, double price, Client client) {
         this.name = name;
         this.price = price;
+        this.client = client;
+        this.id = Math.random();
     }
 
     public double getId() {
@@ -31,4 +34,11 @@ public class Product {
         this.price = price;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 }

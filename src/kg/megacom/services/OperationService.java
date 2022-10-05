@@ -1,17 +1,21 @@
 package kg.megacom.services;
 
-import kg.megacom.enums.OperationStatus;
+import kg.megacom.models.Client;
 import kg.megacom.models.Operation;
 import kg.megacom.models.Product;
 import kg.megacom.services.impl.OperationServiceImpl;
 
+import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 
 public interface OperationService {
     OperationService INSTANCE = new OperationServiceImpl();
 
-    Operation createOperation (Date startDate,Date endDate, OperationStatus status,ArrayList<Product> products, double totalPrice);
-    Double closeOperation (int operationID, Date endDate);
+    Operation createOperation(int days, ArrayList<Product> products, Client client);
+
+    Operation closeOperation(String currentDate, ArrayList<Product> products, Client client) throws ParseException;
+
+    void getOperationByIdCard(String idCard);
+    void getFinalOperationByIdCard(String idCard);
 
 }
